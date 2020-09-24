@@ -12,7 +12,7 @@ export default function App () {
 
   const getEvents = async () => {
     try {
-      const response = await fetch('http://localhost:3000/events')
+      const response = await fetch('https://memory-marker-api.herokuapp.com/events')
       const data = await response.json()
       console.log(data)
       setEvents(data)
@@ -38,7 +38,7 @@ export default function App () {
       event.preventDefault();
       try {
         const response = await axios.post(
-          'http://localhost:3000/events',
+          'https://memory-marker-api.herokuapp.com/events',
           formInputs
         );
         const createdEvent = response.data
